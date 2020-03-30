@@ -1,0 +1,103 @@
+.container {
+    max-width: 120rem; //container can decrease if hasn't got enough enough space to display our 120rem,;inaczej 1200px i jesli mniej to zajmie 100% szerokosci portu
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%; //pojawil sie pasek rozowy z praej strony 120*8= 960 a nie 1200
+        width: 100%;
+    }
+}
+
+.header { 
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+
+    display: flex; //cause it is parent element
+    justify-content: space-between; // divide empty space between 3 elements
+    align-items: center; //wzdłuż osi poprzecznej center
+
+    
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap; //we want to SEARCH bit down actually move it to a new row
+        height: 11rem;
+    }
+
+}
+
+.content {
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column; //user nav on  the top so spanning from the left to the right, four part from sidebar side by side after, part the hotel view after will occupy 100% of the vw; first we have to change flex direction to column
+    }
+
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+
+    flex: 0 0 18%; //don't want to grow & shrink & we want 18% of width; automatic wil be
+
+    display: flex;
+    flex-direction: column; //change the direction of the main axis from left to right to top to bottom
+    justify-content: space-between;
+}
+
+.hotel-view {
+    background-color: #fff;
+    
+    flex: 1; //by using flex 1 element should grow as much as that can; na tyle ile ma przestrzeni 
+}
+
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    } 
+
+    @media only screen and (max-width: $bp-small) {  //detail above,  user overiew below
+        flex-direction: column;
+    } 
+
+
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light); //almost invisible shadow
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    } 
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    } 
+
+
+}
+
+.user-reviews {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
