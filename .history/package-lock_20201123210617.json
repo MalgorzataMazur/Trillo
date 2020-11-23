@@ -4444,7 +4444,7 @@
       }
     },
     "yargs-parser": {
-      "yargs-parser": ">=5.0.0-security.0",
+      "version": "5.0.0",
       "resolved": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-5.0.0.tgz",
       "integrity": "sha1-J17PDX/+Bcd+ZOfIbkzZS/DhIoo=",
       "dev": true,
@@ -4462,3 +4462,4 @@
     }
   }
 }
+"yargs-parser": ">=5.0.0-security.0"
